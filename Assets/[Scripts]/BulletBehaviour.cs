@@ -24,9 +24,9 @@ public class BulletBehaviour : MonoBehaviour
 
     void Start()
     {
+        //SetDirection(bulletDirection);
         bulletManager = FindObjectOfType<BulletManager>();
 
-        SetDirection(bulletDirection);
     }
 
     void Update()
@@ -72,7 +72,11 @@ public class BulletBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        bulletManager.ReturnBullet(this.gameObject, bulletType);
+        if((bulletType == BulletType.PLAYER) ||
+                (bulletType == BulletType.ENEMY && other.gameObject.CompareTag("Player")))
+        {
+            bulletManager.ReturnBullet(this.gameObject, bulletType);
+        }
     }
 
 }

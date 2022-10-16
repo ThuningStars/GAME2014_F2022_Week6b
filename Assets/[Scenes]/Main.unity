@@ -618,10 +618,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190ff1d43eaa54448938947c5f28bec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBulletNumber: 50
+  playerBulletNumber: 25
   playerBulletCount: 0
   activePlayerBullets: 0
-  enemyBulletNumber: 50
+  enemyBulletNumber: 35
   enemyBulletCount: 0
   activeEnemyBullets: 0
 --- !u!114 &1991547529
