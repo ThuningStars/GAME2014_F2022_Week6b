@@ -12,25 +12,22 @@ public class EnemyBehaviour : MonoBehaviour
     public Boundary screenBounds;
     public float horizontalSpeed;
     public float verticalSpeed;
-    public SpriteRenderer spriteRenderer;
     public Color randomColor;
 
     [Header("Bullet Properties")]
     public Transform bulletSpawnPoint;
     public float fireRate = 0.2f;
-    public BulletManager bulletManager;
+
+    private BulletManager bulletManager;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         bulletManager = FindObjectOfType<BulletManager>();
 
-        var RandomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
-        var RandomYPosition = Random.Range(verticalBoundary.min, verticalBoundary.max);
-        horizontalSpeed = Random.Range(1.0f, 6.0f);
-        verticalSpeed = Random.Range(1.0f, 3.0f);
-        transform.position = new Vector3(RandomXPosition, RandomYPosition, 0.0f);
-
+        ResetEnemy();
         InvokeRepeating("FireBullets", 0.0f, fireRate);
     }
 

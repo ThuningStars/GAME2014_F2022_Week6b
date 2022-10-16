@@ -17,10 +17,10 @@ public class BulletBehaviour : MonoBehaviour
     public BulletDirection bulletDirection;
     public float speed;
     public ScreenBounds bounds;
-    public BulletManager bulletManager;
     public BulletType bulletType;
 
     private Vector3 velocity;
+    private BulletManager bulletManager;
 
     void Start()
     {

@@ -6,12 +6,14 @@ public class GameController : MonoBehaviour
 {
     [Range(1, 4)]
     public int enemyNumber;
-    public GameObject enemyPrefab;
-    public List<GameObject> enemyList;
+
+    private List<GameObject> enemyList;
+    private GameObject enemyPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemyPrefab = Resources.Load<GameObject>("Prefabs/Enemy");
         BuildEnemyList();
     }
 

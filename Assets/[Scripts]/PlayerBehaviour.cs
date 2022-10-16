@@ -11,14 +11,14 @@ public class PlayerBehaviour : MonoBehaviour
     public float verticalPosition;
     public float verticalSpeed = 10.0f;
     public bool usingMobileInput = false;
-    public ScoreManager scoreManager;
 
     [Header("Bullet Properties")]
     public Transform bulletSpawnPoint;
     public float fireRate = 0.2f;
-    public BulletManager bulletManager;
 
-    public Camera camera;
+    private BulletManager bulletManager;
+    private Camera camera;
+    private ScoreManager scoreManager;
 
     void Start()
     {
